@@ -6,7 +6,7 @@ package mypackage
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
-  "github.com/ethanjweiner/go-test-helper"
+  "github.com/ethanjweiner/go-test-helper/testhelper"
 )
 
 func Add(a int, b int) int {
@@ -21,7 +21,7 @@ func Test_Add(t *testing.T) {
 	}
 
   // Define your test cases
-	tests := []testkit.TestCase[input]{
+	tests := []testhelper.TestCase[input]{
 		{
 			Name:     "1 + 2",
 			Args:     input{1, 2},
@@ -30,7 +30,7 @@ func Test_Add(t *testing.T) {
 	}
 
   // Run all tests
-	Run_Tests(t, tests, func(test testkit.TestCase[input]) {
+	testhelper.Run_Tests(t, tests, func(test testhelper.TestCase[input]) {
     // Add assertings here with your preferred testing library
 		actual := Add(test.Args.a, test.Args.b)
 		assert.Equal(t, actual, test.Expected)

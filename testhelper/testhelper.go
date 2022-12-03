@@ -1,4 +1,4 @@
-package testkit
+package testhelper
 
 import (
 	"testing"
