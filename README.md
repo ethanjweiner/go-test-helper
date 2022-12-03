@@ -5,7 +5,7 @@ package mypackage
 
 import (
 	"testing"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/assert" // Or your library of choice
   "github.com/ethanjweiner/go-test-helper/testhelper"
 )
 
