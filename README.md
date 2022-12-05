@@ -88,11 +88,12 @@ If you use VSCode, add the following snippets to `global_snippets.code-snippets`
       "			},",
       "			Expected: $5,",
       "		},",
+      "   ${6:// More tests beneath}"
       "	}"
       "",
       "	// Run all tests",
       "	testhelper.Run_Tests(t, tests, func(test testhelper.TestCase[input]) {",
-      "		${6://Default testing logic}",
+      "		${7://Default testing logic}",
       "	})",
       "}"
     ],
