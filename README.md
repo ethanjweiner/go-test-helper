@@ -52,4 +52,50 @@ func Test_Add(t *testing.T) {
 
 ```
 
-If you wish, create a snippet of the above in your code editor for easier usage.
+If you use VSCode, add the following snippets to `global_snippets.code-snippets` for easier usage:
+
+```json
+  "Go Testing Imports": {
+    "prefix": "gotestimport",
+    "scope": "go",
+    "body": [
+      "import (",
+      "	\"testing\"",
+      "",
+      "	\"github.com/ethanjweiner/go-test-helper/testhelper\"",
+      // Your favorite testing library
+      "	\"github.com/stretchr/testify/assert\"",
+      ")",
+      "",
+    ]
+  },
+  "Go Testing Function": {
+    "prefix": "gotestfunc",
+    "scope": "go",
+    "body": [
+      "func Test_$1(t *testing.T) {",
+      "	// Define the types of your input",
+      "	type input struct {",
+      "    $2",
+      "	}",
+      "",
+      "	// Define your test cases",
+      "	tests := []testhelper.TestCase[input]{",
+      "		{",
+      "			Name: \"$3\",",
+      "			Args: input{",
+      "				$4",
+      "			},",
+      "			Expected: $5,",
+      "		},",
+      "	}"
+      "",
+      "	// Run all tests",
+      "	testhelper.Run_Tests(t, tests, func(test testhelper.TestCase[input]) {",
+      "		${6://Default testing logic}",
+      "	})",
+      "}"
+    ],
+    "description": "Test functions in Go with github.com/ethanjweiner/go-test-helper/testhelper testhelper."
+  }
+```
